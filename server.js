@@ -16,10 +16,12 @@ app.use(express.json());
 app.use(express.static("public"));
 
 mongoose.connect(
-  process.env.MONGODB_URI || 'mongodb://localhost/workoutTracker',
+  process.env.MONGODB_URI || 'mongodb://localhost/budgetDB',
   {
       useNewUrlParser: true,
-      useUnifiedTopology: true
+      useUnifiedTopology: true,
+      useCreateIndex: true,
+      useFindAndModify: false,
   }
 );
 
